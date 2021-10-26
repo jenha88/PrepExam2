@@ -11,8 +11,8 @@
             <ImageBrush ImageSource="https://wallpaper.dog/large/17242634.png"/>
         </Grid.Background>
         <ComboBox x:Name="cbColor" HorizontalAlignment="Left" Margin="260,108,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btbPush" Content="Push" HorizontalAlignment="Left" Margin="118,267,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="btbExport" Content="Export" HorizontalAlignment="Left" Margin="220,268,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btbPush" Content="Push" HorizontalAlignment="Left" Margin="118,267,0,0" VerticalAlignment="Top" Width="75" Click="btbPush_Click"/>
+        <Button x:Name="btbExport" Content="Export" HorizontalAlignment="Left" Margin="220,268,0,0" VerticalAlignment="Top" Width="75" Click="btbExport_Click"/>
         <ListBox x:Name="lstBox" HorizontalAlignment="Left" Height="306" Margin="444,89,0,0" VerticalAlignment="Top" Width="323">
             <ListBox.Background>
                 <SolidColorBrush Color="White" Opacity="0.5"/>
@@ -22,6 +22,8 @@
         <Label Content="Year" HorizontalAlignment="Left" Margin="80,83,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold"/>
         <Label Content="Car Color" HorizontalAlignment="Left" Margin="264,80,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold"/>
         <TextBox x:Name="txtYear" HorizontalAlignment="Left" Height="23" Margin="82,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtConditions" HorizontalAlignment="Left" Height="23" Margin="202,197,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Greater than or Equal to/ Equal to / Less than or Equal to" HorizontalAlignment="Left" Margin="130,172,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="10"/>
 
     </Grid>
 </Window>
