@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Car
+namespace boop
 {
     public class Car
     {
-        public string CarMake {get;set;}
+        public string CarMake { get; set; }
         public string CarColor { get; set; }
         public int Year { get; set; }
         public int Mileage { get; set; }

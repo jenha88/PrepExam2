@@ -16,7 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Car
+namespace boop
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -30,7 +30,7 @@ namespace Car
             InitializeComponent();
             using (var client= new HttpClient())
             {
-                string jsonData = client.GetStringAsync("https://timmyluong11.github.io/JamJamTestJSON/RandCar2.json").Result;
+                string jsonData = client.GetStringAsync("https://timmyluong11.github.io/JamJamTestJSON/RandCar3.json").Result;
                 //Car cc = JsonConvert.DeserializeObject<Car>(jsonData);
                List<Car> beep = JsonConvert.DeserializeObject<List<Car>>(jsonData);
                 foreach (var item in beep)
@@ -41,6 +41,17 @@ namespace Car
              
             }
             PopulateCB(C);
+            PopulateLB(C);
+
+
+        }
+        private void PopulateLB(List<Car> vroom2)
+        {
+            lstBox.Items.Clear();
+            foreach (var item in vroom2)
+            {
+                lstBox.Items.Add(item);
+            }
         }
         private void PopulateCB(List<Car> vroom)
         {
@@ -94,14 +105,16 @@ namespace Car
                 {
                     c.Add(item);
                 }
+              
             }
             return c;
         }
         private void btbPush_Click(object sender, RoutedEventArgs e)
         {
             c = FilterColor(C);
-            c = FilterYear(C);
-            PopulateCB(c);
+            c = FilterYear(c);
+            PopulateLB(c);
+
             
         }
 
@@ -111,6 +124,18 @@ namespace Car
             File.WriteAllText("car.json", jj);
 
             MessageBox.Show("(∩^o^)⊃━☆ Yay it successful exported!");
+        }
+
+        private void lstBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Car selecteditem = (Car)lstBox.SelectedItem;
+            wind wind = new wind();
+            wind.SW(selecteditem);
+            wind.ShowDialog();
+           
+            
+            
+
         }
     }
 }
