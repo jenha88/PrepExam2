@@ -31,7 +31,6 @@ namespace boop
             using (var client= new HttpClient())
             {
                 string jsonData = client.GetStringAsync("https://timmyluong11.github.io/JamJamTestJSON/RandCar3.json").Result;
-                //Car cc = JsonConvert.DeserializeObject<Car>(jsonData);
                List<Car> beep = JsonConvert.DeserializeObject<List<Car>>(jsonData);
                 foreach (var item in beep)
                 {
@@ -129,9 +128,9 @@ namespace boop
         private void lstBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Car selecteditem = (Car)lstBox.SelectedItem;
-            wind wind = new wind();
-            wind.SW(selecteditem);
-            wind.ShowDialog();
+            wind ww= new wind();
+            ww.SW(selecteditem);
+            ww.ShowDialog();
            
             
             
